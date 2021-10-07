@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio de registro de notas</title>
+    <link rel="stylesheet" href="Arreglos y Formato.css">
+</head>
+<body>
+    <div class='contenedor'>
+        <h1>CLIENTES</h1>
+        <form action="#" method="POST">
+            <label>Nombre</label><input type="text" id="Nombre"><br>
+            <label>Direccion</label><input type="text" id="Direccion"><br>
+            <label>Telefono</label><input type="text" id="Telefono"><br>
+            <label>Gmail</label><input type="text" id="Gmail"><br>
+            <label>Contraseña</label><input type="text" id="Contraseña"><br><br>
+            <input type="button" value="Registrar" class="registrar" onclick="Registar_Notas();">
+        </form>
+    </div>
+    <br><br><br><br>
+    <table>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Gmail</th>
+        <th>Contraseña</th>
+        <tbody id="Tabla">    
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    var ferre_agro=[];
+    function Registar_Notas(){
+        var Nombre=document.getElementById('Nombre').value;
+        var Direccion=document.getElementById('Direccion').value;
+        var Telefono=document.getElementById('Telefono').value;
+        var Gmail=document.getElementById('Gmail').value;
+        var Contraseña=document.getElementById('Contraseña').value;
+        ferre_agro.push (
+        {"Nombre":Nombre,"Direccion":Direccion,"Telefono":Telefono,"Gmail":Gmail,"Contraseña":Contraseña}
+    );
+  Listar_Notas();
+  document.getElementById('Nombre').value="";
+  document.getElementById('Direccion').value="";
+  document.getElementById('Telefono').value="";
+  document.getElementById('Gmail').value="";
+  document.getElementById('Contraseña').value="";
+  
+    }
+
+    function Listar_Notas(){
+        var Listado='<tr>';
+            for(var i=0;i<ferre_agro.length;i++){
+                Listado +="<td>"+i+"</td>";
+                Listado +="<td>"+ferre_agro[i].Nombre+"</td>";
+                Listado +="<td>"+ferre_agro[i].Direccion+"</td>";
+                Listado +="<td>"+ferre_agro[i].Telefono+"</td>";
+                Listado +="<td>"+ferre_agro[i].Gmail+"</td>";
+                Listado +="<td>"+ferre_agro[i].Contraseña+"</td>";
+                Listado +="</tr>";
+                
+            }
+            
+            document.getElementById('Tabla').innerHTML=Listado;
+        }
+  </script>
