@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ejercicio de registro de notas</title>
-    <link rel="stylesheet" href="Arreglos y Formato.css">
+    <title>TABLA CLIENTES</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class='contenedor'>
@@ -16,7 +16,7 @@
             <label>Telefono</label><input type="text" id="Telefono"><br>
             <label>Gmail</label><input type="text" id="Gmail"><br>
             <label>Contraseña</label><input type="text" id="Contraseña"><br><br>
-            <input type="button" value="Registrar" class="registrar" onclick="Registar_Notas();">
+            <input type="button" value="Registrar" class="registrar" onclick="Registar_clientes();">
         </form>
     </div>
     <br><br><br><br>
@@ -34,7 +34,7 @@
 </html>
 <script>
     var ferre_agro=[];
-    function Registar_Notas(){
+    function Registar_clientes(){
         var Nombre=document.getElementById('Nombre').value;
         var Direccion=document.getElementById('Direccion').value;
         var Telefono=document.getElementById('Telefono').value;
@@ -43,7 +43,7 @@
         ferre_agro.push (
         {"Nombre":Nombre,"Direccion":Direccion,"Telefono":Telefono,"Gmail":Gmail,"Contraseña":Contraseña}
     );
-  Listar_Notas();
+  Listar_clientes();
   document.getElementById('Nombre').value="";
   document.getElementById('Direccion').value="";
   document.getElementById('Telefono').value="";
@@ -52,7 +52,7 @@
   
     }
 
-    function Listar_Notas(){
+    function Listar_clientes(){
         var Listado='<tr>';
             for(var i=0;i<ferre_agro.length;i++){
                 Listado +="<td>"+i+"</td>";
